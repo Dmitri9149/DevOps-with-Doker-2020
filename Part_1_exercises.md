@@ -33,6 +33,7 @@ Clean the docker daemon from all images and containers.
 
 Submit the output for docker ps -a and docker images
 **********************************************************************
+```console
 dmitri@dmitri-Lenovo-H50-00:~/projects$ docker container prune
 WARNING! This will remove all stopped containers.
 Are you sure you want to continue? [y/N] y
@@ -74,6 +75,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 dmitri@dmitri-Lenovo-H50-00:~/projects$ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 dmitri@dmitri-Lenovo-H50-00:~/projects$ 
+```
 ***********************************************************************************************
 ***********************************************************************************************
 
