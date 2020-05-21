@@ -12,12 +12,13 @@ Stop 2 of the containers leaving 1 up.
 Submitting the output for docker ps -a is enough to prove this exercise has been done.
 
 *********************
+```console
 
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
 453dedee991f        nginx               "nginx -g 'daemon of…"   16 minutes ago      Up 16 minutes               80/tcp              boring_beaver
 6afd80ee1e75        nginx               "nginx -g 'daemon of…"   17 minutes ago      Exited (0) 15 minutes ago                       jolly_margulis
 3f84e9aa15c4        nginx               "nginx -g 'daemon of…"   18 minutes ago      Exited (0) 15 minutes ago                       gallant_wilbur
-
+```
 ********************************************************************************************
 *********************************************************************************************
 
