@@ -116,12 +116,14 @@ Start image devopsdockeruh/exec_bash_exercise, it will start a container with cl
 Submit the secret message and command(s) given as your answer.
 
 ***********************************************************
+``` console
 dmitri@dmitri-Lenovo-H50-00:~/projects$ docker run -it devopsdockeruh/pull_exercise
 Give me the password: basics
 You found the correct password. Secret message is:
 "This is the secret message"
 
 dmitri@dmitri-Lenovo-H50-00:~/projects$ 
+```
 ******************************************************************************
 ******************************************************************************
 
