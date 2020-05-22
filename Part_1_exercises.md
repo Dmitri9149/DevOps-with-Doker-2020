@@ -437,6 +437,7 @@ When you will build an image tag it as “docker-clock” so that docker run doc
 
 Return both Dockerfile(s) and the command you used to run the container(s)
 ****************************************************************************
+```console
 dmitri@dmitri-Lenovo-H50-00:~/projects/1.6_dockerfile$ docker build -t docker-clock .
 Sending build context to Docker daemon  2.048kB
 Step 1/1 : FROM devopsdockeruh/overwrite_cmd_exercise
@@ -451,6 +452,7 @@ dmitri@dmitri-Lenovo-H50-00:~/projects/1.6_dockerfile$ docker run docker-clock
 -t [size],      --triangle [size]       to draw a triangle, takes second argument as the size
     
 dmitri@dmitri-Lenovo-H50-00:~/projects/1.6_dockerfile$ 
+```
 ********************************************************************************
 ********************************************************************************
 
