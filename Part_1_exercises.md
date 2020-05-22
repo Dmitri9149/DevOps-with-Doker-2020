@@ -426,7 +426,32 @@ Searching..
 root@f9f56814e3dc:/# 
 ```
 ***************************************************************************
-******************************************************************************
+****************************************************************************
+1.6
 
+Create a Dockerfile that starts with FROM devopsdockeruh/overwrite_cmd_exercise. Add a CMD line to the Dockerfile.
+
+The developer has poorly documented how the application works. Nevertheless once you will execute an application (run a container from an image) you will have some clues on how it works. Your task is to run an application so that it will simulate a clock functionality.
+
+When you will build an image tag it as “docker-clock” so that docker run docker-clock starts the application.
+
+Return both Dockerfile(s) and the command you used to run the container(s)
+****************************************************************************
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.6_dockerfile$ docker build -t docker-clock .
+Sending build context to Docker daemon  2.048kB
+Step 1/1 : FROM devopsdockeruh/overwrite_cmd_exercise
+ ---> 3d2b622b1849
+Successfully built 3d2b622b1849
+Successfully tagged docker-clock:latest
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.6_dockerfile$ docker run docker-clock
+
+-h,             --help                  to show this message
+-a [age],       --adult [age]           to check if you're older than 18
+-c [time],      --clock [time]          to start a clock
+-t [size],      --triangle [size]       to draw a triangle, takes second argument as the size
+    
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.6_dockerfile$ 
+********************************************************************************
+********************************************************************************
 
 
