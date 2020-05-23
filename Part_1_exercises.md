@@ -456,4 +456,50 @@ dmitri@dmitri-Lenovo-H50-00:~/projects/1.6_dockerfile$
 ********************************************************************************
 ********************************************************************************
 
+1.7
+
+Now that we know how to create and build Dockerfiles we can improve previous works.
+
+Create a Dockerfile for a new image that starts from ubuntu:16.04.
+
+Make a script file on you local machine with such content as echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;. Transfer this file to an image and run it inside the container using CMD. Build the image with tag “curler”.
+
+Run command docker run [options] curler (with correct flags again, as in 1.5) and input helsinki.fi into it. Output should match the 1.5 one.
+
+Return both Dockerfile(s) and the command you used to run the container(s)
+*******************************************************************************
+```console
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.7_dockerfile$ docker build -t curler .
+Sending build context to Docker daemon  3.072kB
+Step 1/5 : FROM ubuntu:16.04
+ ---> 005d2078bdfa
+Step 2/5 : WORKDIR /mydir
+ ---> Using cache
+ ---> 94ad0c8a2fcd
+Step 3/5 : RUN apt-get update && apt-get install -y curl
+ ---> Using cache
+ ---> 638857c37f90
+Step 4/5 : COPY script.sh .
+ ---> bc82c8f21fab
+Step 5/5 : ENTRYPOINT ["sh", "./script.sh"]
+ ---> Running in 03edfc075bdb
+Removing intermediate container 03edfc075bdb
+ ---> f20afe775ef4
+Successfully built f20afe775ef4
+Successfully tagged curler:latest
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.7_dockerfile$ docker run -it curler
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.7_dockerfile$
+```
+******************************************************************************
+*******************************************************************************
 
