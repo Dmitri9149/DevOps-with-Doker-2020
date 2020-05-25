@@ -503,3 +503,69 @@ dmitri@dmitri-Lenovo-H50-00:~/projects/1.7_dockerfile$
 ******************************************************************************
 *******************************************************************************
 
+1.8
+
+In this exercise we won’t create a new Dockerfile. Image devopsdockeruh/first_volume_exercise has instructions to create a log into /usr/app/logs.txt. Start the container with bind mount so that the logs are created into your filesystem.
+
+Submit your used commands for this exercise.
+************************************************************
+```console
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.8_dockerfile$ ls
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.8_dockerfile$ touch logs.txt
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.8_dockerfile$ (docker run -v $(pwd)/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise)
+(node:1) ExperimentalWarning: The fs.promises API is experimental
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+^CClosing file
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.8_dockerfile$ 
+
+Mon, 25 May 2020 17:09:36 GMT
+Mon, 25 May 2020 17:09:39 GMT
+Mon, 25 May 2020 17:09:42 GMT
+Mon, 25 May 2020 17:09:45 GMT
+Secret message is:
+"Volume bind mount is easy"
+Mon, 25 May 2020 17:09:51 GMT
+Mon, 25 May 2020 17:09:54 GMT
+Mon, 25 May 2020 17:09:57 GMT
+Mon, 25 May 2020 17:10:00 GMT
+Secret message is:
+"Volume bind mount is easy"
+```
+**********************************************************************
+*************************************************************************
+
+
