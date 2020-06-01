@@ -574,4 +574,23 @@ In this exercise we won’t create a new Dockerfile. Image devopsdockeruh/ports_
 
 Submit your used commands for this exercise.
 **********************************************************
+```console
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.9_dockerfile$ docker run -d --rm -it -p 1234:80 --name port_expose -it devopsdockeruh/ports_exercise
+Unable to find image 'devopsdockeruh/ports_exercise:latest' locally
+latest: Pulling from devopsdockeruh/ports_exercise
+cd784148e348: Pull complete 
+9abca35fefbf: Pull complete 
+7fc670963d22: Pull complete 
+893040f9bc16: Pull complete 
+b0ae6401e570: Pull complete 
+Digest: sha256:2ff93dd0c744aee7a8f00bc9558d09fd6279493da0d01769fe600f78fb4593f2
+Status: Downloaded newer image for devopsdockeruh/ports_exercise:latest
+6880fd7e273d85d0aa4837d276506192d5d8698667eaa97f72e5f3a29387627c
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.9_dockerfile$ w3m http://localhost:1234/
+```
 
+The message at the terminal is : 
+
+##### Ports configured correctly!!
+
+***************************************************************************
