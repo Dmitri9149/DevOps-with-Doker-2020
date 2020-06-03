@@ -594,3 +594,168 @@ The message at the terminal is :
 ##### Ports configured correctly!!
 
 ***************************************************************************
+*********************************************************************************
+
+1.10
+
+This exercise is mandatory
+
+A good developer creates well written READMEs that can be used to create Dockerfiles with ease.
+
+Clone, fork or download a project from https://github.com/docker-hy/frontend-example-docker.
+
+Create a Dockerfile for the project and give a command so that the project runs in a docker container with port 5000 exposed and published so when you start the container and navigate to http://localhost:5000 you will see message if you’re successful.
+
+Submit the Dockerfile.
+
+As in other exercises, do not alter the code of the project
+
+    TIP: The project has install instructions in README.
+
+    TIP: Note that the app starts to accept connections when “Accepting connections at http://localhost:5000” has been printed to the screen, this takes a few seconds
+
+    TIP: You do not have to install anything new outside containers.
+
+************************************************************
+```console
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.10_Dockerfile/frontend-example-docker$ docker build -t myfirst .
+Sending build context to Docker daemon  221.9MB
+Step 1/10 : FROM ubuntu:16.04
+ ---> 005d2078bdfa
+Step 2/10 : WORKDIR /dist
+ ---> Using cache
+ ---> 6d43a4c7d416
+Step 3/10 : RUN apt-get update && apt-get install -y curl
+ ---> Using cache
+ ---> 2a049788f650
+Step 4/10 : RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+ ---> Using cache
+ ---> 41a044dc1526
+Step 5/10 : RUN apt install -y nodejs
+ ---> Using cache
+ ---> 1ce065da2c81
+Step 6/10 : COPY package.json /dist
+ ---> Using cache
+ ---> 69a729a13f2b
+Step 7/10 : RUN npm install
+ ---> Using cache
+ ---> c464e0468aa5
+Step 8/10 : COPY . /dist
+ ---> cbb701f90cc3
+Step 9/10 : EXPOSE 5000
+ ---> Running in b0c1d8821ab0
+Removing intermediate container b0c1d8821ab0
+ ---> 8233cad18191
+Step 10/10 : CMD npm start
+ ---> Running in a7a33fd6b50d
+Removing intermediate container a7a33fd6b50d
+ ---> 838ef65feb26
+Successfully built 838ef65feb26
+Successfully tagged myfirst:latest
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.10_Dockerfile/frontend-example-docker$ docker run -p 1234:5000 myfirst
+
+> frontend-example-docker@1.0.0 start /dist
+> webpack --mode production && serve -s -l 5000 dist
+
+Hash: 9a4d23964a0815fedb61
+Version: webpack 4.42.1
+Time: 40459ms
+Built at: 06/03/2020 12:47:31 PM
+                                 Asset       Size  Chunks                    Chunk Names
+0ab54153eeeca0ce03978cc463b257f7.woff2   39.2 KiB          [emitted]         
+  13db00b7a34fee4d819ab7f9838cc428.eot   96.3 KiB          [emitted]         
+  701ae6abd4719e9c2ada3535a497b341.eot   30.4 KiB          [emitted]         
+  82f60bd0b94a1ed68b1e6e309ce2e8c3.svg    105 KiB          [emitted]         
+  8e3c7f5520f5ae906c6cf6d7f3ddcd19.eot    104 KiB          [emitted]         
+  962a1bf31c081691065fe333d9fa8105.svg    382 KiB          [emitted]  [big]  
+  9c74e172f87984c48ddf5c8108cabe67.png   27.5 KiB          [emitted]         
+ a046592bac8f2fd96e994733faf3858c.woff   62.2 KiB          [emitted]         
+  a1a749e89f578a49306ec2b055c073da.svg    496 KiB          [emitted]  [big]  
+  a3e2211dddcba197b5bbf2aa9d5d9a9a.svg   3.19 KiB          [emitted]         
+  ad97afd3337e8cda302d10ff5a4026b8.ttf   30.2 KiB          [emitted]         
+  b87b9ba532ace76ae9f6edfe9f72ded2.ttf    103 KiB          [emitted]         
+  bff6c47a9da5c7cfa2e8a552e2df3a78.svg    3.2 KiB          [emitted]         
+  c5ebe0b32dc1b5cc449a76c4204d13bb.ttf   96.1 KiB          [emitted]         
+cd6c777f1945164224dee082abaea03a.woff2     12 KiB          [emitted]         
+e8c322de9658cbeb8a774b6624167c2c.woff2   53.2 KiB          [emitted]         
+ ef60a4f6c25ef7f39f2d25a748dbecfe.woff   14.4 KiB          [emitted]         
+ faff92145777a3cbaf8e7367b4807987.woff   49.3 KiB          [emitted]         
+                            index.html  454 bytes          [emitted]         
+                              main.css  127 bytes       0  [emitted]         main
+                               main.js   21.8 KiB       0  [emitted]         main
+                    vendors~main-1.css    602 KiB       1  [emitted]  [big]  vendors~main
+                       vendors~main.js    342 KiB       1  [emitted]  [big]  vendors~main
+           vendors~main.js.LICENSE.txt   1.37 KiB          [emitted]         
+Entrypoint main [big] = vendors~main-1.css vendors~main.js main.css main.js
+  [7] ./node_modules/semantic-ui-react/dist/es/lib/index.js + 1 modules 2.94 KiB {1} [built]
+      |    2 modules
+ [51] ./node_modules/semantic-ui-react/dist/es/elements/Icon/Icon.js + 1 modules 6.22 KiB {1} [built]
+      |    2 modules
+ [80] ./node_modules/react-redux/es/index.js + 19 modules 37 KiB {1} [built]
+      |    20 modules
+ [93] ./node_modules/semantic-ui-react/dist/es/elements/Label/Label.js + 2 modules 10.6 KiB {1} [built]
+      |    3 modules
+[212] (webpack)/buildin/global.js 472 bytes {1} [built]
+[251] ./src/assets/toscalogo_color.svg 82 bytes {0} [built]
+[252] ./src/assets/toscalogo_grayscale.svg 82 bytes {0} [built]
+[270] multi @babel/polyfill ./src 40 bytes {0} [built]
+[464] (webpack)/buildin/harmony-module.js 573 bytes {1} [built]
+[466] ./src/assets/custom.css 39 bytes {0} [built]
+[602] ./src/index.js + 18 modules 42.1 KiB {0} [built]
+      | ./src/index.js 609 bytes [built]
+      | ./src/util/store.js 481 bytes [built]
+      | ./util/common.js 117 bytes [built]
+      | ./src/util/apiConnection.js 4.57 KiB [built]
+      | ./src/util/redux/index.js 219 bytes [built]
+      | ./src/util/redux/messageReducer.js 2.15 KiB [built]
+      | ./src/util/redux/simpleReducer.js 1.86 KiB [built]
+      | ./src/util/common.js 221 bytes [built]
+      |     + 11 hidden modules
+[603] ./node_modules/semantic-ui-react/dist/es/elements/Button/Button.js + 3 modules 17.7 KiB {1} [built]
+      |    4 modules
+[612] ./node_modules/react-router-dom/es/BrowserRouter.js + 12 modules 41 KiB {1} [built]
+      |    13 modules
+[614] ./node_modules/react-router-dom/es/Switch.js + 1 modules 3.35 KiB {1} [built]
+      |    2 modules
+[615] ./node_modules/react-router-dom/es/Route.js + 1 modules 5.9 KiB {1} [built]
+      |    2 modules
+    + 989 hidden modules
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  962a1bf31c081691065fe333d9fa8105.svg (382 KiB)
+  a1a749e89f578a49306ec2b055c073da.svg (496 KiB)
+  vendors~main-1.css (602 KiB)
+  vendors~main.js (342 KiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (966 KiB)
+      vendors~main-1.css
+      vendors~main.js
+      main.css
+      main.js
+
+
+WARNING in webpack performance recommendations: 
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+Child html-webpack-plugin for "index.html":
+     1 asset
+    Entrypoint undefined = index.html
+    [2] (webpack)/buildin/global.js 472 bytes {0} [built]
+    [3] (webpack)/buildin/module.js 497 bytes {0} [built]
+        + 2 hidden modules
+Child mini-css-extract-plugin node_modules/css-loader/index.js!node_modules/semantic-ui-css/semantic.min.css:
+    Entrypoint mini-css-extract-plugin = *
+       19 modules
+Child mini-css-extract-plugin node_modules/css-loader/index.js!src/assets/custom.css:
+    Entrypoint mini-css-extract-plugin = *
+    [0] ./node_modules/css-loader!./src/assets/custom.css 340 bytes {0} [built]
+        + 1 hidden module
+UPDATE AVAILABLE The latest version of `serve` is 11.3.1
+INFO: Accepting connections at http://localhost:5000
+```
+************************************************************************
+
