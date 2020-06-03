@@ -4,3 +4,9 @@ let_us_try
 
 .tgz
 /node_modules
+
+!.gitignore
+# Whitelist the folder
+!1.11_Dockerfile/
+# Recursively whitelist its contents
+!1.11_Dockerfile/**
