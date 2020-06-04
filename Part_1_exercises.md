@@ -767,3 +767,64 @@ docker run -p 5000:5000 myfirst
 ********************************************************************************************
 ********************************************************************************************
 
+1.11
+
+This exercise is mandatory
+
+Clone, fork or download a project from https://github.com/docker-hy/backend-example-docker.
+
+Create a Dockerfile for the project and give a command so that the project runs in a docker container with port 8000 exposed and published so when you start the container and navigate to http://localhost:8000 you will generate a message in logs.txt in the root.
+
+Create a volume for the logs.txt so that when the application is shut down the logs are not destroyed. And when restarted it continues to write into the same logs.txt.
+
+Submit the Dockerfile and the command used.
+
+Do not alter the code of the project
+************************************************************************************
+```console
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.11_Dockerfile/backend-example-docker$ docker build -t mysecond .
+Sending build context to Docker daemon  233.5kB
+Step 1/10 : FROM ubuntu:16.04
+ ---> 005d2078bdfa
+Step 2/10 : WORKDIR /app_server
+ ---> Using cache
+ ---> d66b0156057b
+Step 3/10 : RUN apt-get update && apt-get install -y curl
+ ---> Using cache
+ ---> 429a6bc4759f
+Step 4/10 : RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+ ---> Using cache
+ ---> 6e5c56d50cd5
+Step 5/10 : RUN apt install -y nodejs
+ ---> Using cache
+ ---> a4483e6d527e
+Step 6/10 : COPY package.json /app_server
+ ---> Using cache
+ ---> 0de732e26915
+Step 7/10 : RUN npm install
+ ---> Using cache
+ ---> 0ec5b6b70347
+Step 8/10 : COPY . /app_server
+ ---> fc0160ef7afd
+Step 9/10 : EXPOSE 8000
+ ---> Running in 9f5d44be4b14
+Removing intermediate container 9f5d44be4b14
+ ---> db46b808f2ed
+Step 10/10 : CMD npm start
+ ---> Running in a0762024d425
+Removing intermediate container a0762024d425
+ ---> 852567dbdc94
+Successfully built 852567dbdc94
+Successfully tagged mysecond:latest
+dmitri@dmitri-Lenovo-H50-00:~/projects/1.11_Dockerfile/backend-example-docker$ docker run -p 8000:8000 -v $(pwd)/logs.txt:/app_server/logs.txt mysecond
+
+> backend-example-docker@1.0.0 start /app_server
+> cross-env NODE_ENV=production node index.js
+
+Started on port 8000
+
+```
+*******************************************
+
+
+
