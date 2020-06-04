@@ -826,5 +826,10 @@ Started on port 8000
 ```
 *******************************************
 
+The message from web page: Port configured correctly, generated message in logs.txt
+
+*****************************************************
+*****************************************************
+
 
 
