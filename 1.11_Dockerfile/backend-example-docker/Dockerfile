@@ -8,4 +8,4 @@ COPY package.json /app_server
 RUN npm install
 COPY . /app_server
 EXPOSE 8000
-CMD npm start
+CMD npm start 
