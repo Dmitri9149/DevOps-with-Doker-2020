@@ -3,7 +3,8 @@ let_us_try
 
 
 .tgz
-/node_modules
+node_modules/
+/dist/
 
 !.gitignore
 # Whitelist the folder
