@@ -8,4 +8,5 @@ COPY package.json /app_server
 RUN npm install
 COPY . /app_server
 EXPOSE 8000
+ENV FRONT_URL=http://127.0.0.1:5000
 CMD npm start 
