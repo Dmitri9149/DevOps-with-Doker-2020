@@ -759,7 +759,7 @@ INFO: Accepting connections at http://localhost:5000
 ```
 ************************************************************************
 
-The message om the web page: Exercise 1.10: Congratulations! You configured your ports correctly!
+The message on the web page: Exercise 1.10: Congratulations! You configured your ports correctly!
 
 To run on localhost:5000 need to execute: 
 docker run -p 5000:5000 myfirst
