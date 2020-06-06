@@ -8,7 +8,7 @@ COPY package.json /app
 RUN npm install
 COPY . /app
 EXPOSE 5000
-#ENV API_URL=http://127.0.0.1:8000
-ENV API_URL=http://localhost:8000
+ENV API_URL=http://127.0.0.1:8000
+#ENV API_URL=http://localhost:8000
 
 CMD npm start
