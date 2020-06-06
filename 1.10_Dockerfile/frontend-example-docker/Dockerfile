@@ -1,14 +1,14 @@
 FROM ubuntu:16.04
 
-WORKDIR /dist 
+WORKDIR /app 
 RUN apt-get update && apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
 RUN apt install -y nodejs
-COPY package.json /dist
+COPY package.json /app
 RUN npm install
-COPY . /dist
+COPY . /app
 EXPOSE 5000
 #ENV API_URL=http://127.0.0.1:8000
-ENV API_URL= API_URL=http://localhost:8000
+ENV API_URL=http://localhost:8000
 
 CMD npm start
