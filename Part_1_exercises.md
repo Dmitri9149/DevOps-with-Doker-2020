@@ -1043,8 +1043,83 @@ Type in browser : http://127.0.0.1:5000
 
 Then : "Press to Test";  Reply : Working!
 
-**************************************************************************************
-****************************************************************************************
+**************************************************************************
+****************************************************************************************************************************************************
 
+1.13
 
+Lets create a Dockerfile for a Java Spring project: github page
 
+The setup should be straightforward with the README instructions. Tips to get you started:
+
+Use openjdk image FROM openjdk:_tag_ to get java instead of installing it manually. Pick the tag by using the README and dockerhub page.
+
+You’ve completed the exercise when you see a ‘Success’ message in your browser.
+************************************************************
+```
+dmitri@dmitri-Lenovo-H50-00:~/projects/spring-example-project$ docker build .
+Sending build context to Docker daemon  43.01kB
+Step 1/6 : FROM openjdk:8
+ ---> 51d6b33ebe8a
+Step 2/6 : COPY . /workdir
+ ---> Using cache
+ ---> 3716517778a1
+Step 3/6 : WORKDIR /workdir
+ ---> Using cache
+ ---> e0b7686840b5
+Step 4/6 : RUN ./mvnw package
+ ---> Using cache
+ ---> e8a321f45a79
+Step 5/6 : EXPOSE 8080
+ ---> Using cache
+ ---> 71a4f0099ef8
+Step 6/6 : CMD java -jar ./target/docker-example-1.1.3.jar
+ ---> Using cache
+ ---> 70996a32c4c0
+Successfully built 70996a32c4c0
+dmitri@dmitri-Lenovo-H50-00:~/projects/spring-example-project$ docker images
+REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
+<none>                                  <none>              70996a32c4c0        16 hours ago        596MB
+openjdk                                 8                   51d6b33ebe8a        4 days ago          511MB
+myfirst                                 latest              a27cce782980        6 weeks ago         683MB
+<none>                                  <none>              2546608839c2        6 weeks ago         683MB
+<none>                                  <none>              dedb2edeeca0        6 weeks ago         683MB
+mysecond                                latest              f9f091ee8053        6 weeks ago         353MB
+<none>                                  <none>              852567dbdc94        6 weeks ago         353MB
+<none>                                  <none>              4e4ca32a27af        6 weeks ago         353MB
+<none>                                  <none>              838ef65feb26        6 weeks ago         683MB
+<none>                                  <none>              706f893db326        6 weeks ago         684MB
+fav_distro                              xenial              005d2078bdfa        2 months ago        125MB
+ubuntu                                  16.04               005d2078bdfa        2 months ago        125MB
+devopsdockeruh/overwrite_cmd_exercise   latest              3d2b622b1849        9 months ago        908MB
+docker-clock  
+dmitri@dmitri-Lenovo-H50-00:~/projects/spring-example-project$ docker run -p 1234:8080 70996a32c4c0
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.3.RELEASE)
+
+2020-07-21 09:05:22.801  INFO 6 --- [           main] c.d.dockerexample.DemoApplication        : Starting DemoApplication v1.1.3 on 6c1f32b5800d with PID 6 (/workdir/target/docker-example-1.1.3.jar started by root in /workdir)
+2020-07-21 09:05:22.814  INFO 6 --- [           main] c.d.dockerexample.DemoApplication        : No active profile set, falling back to default profiles: default
+2020-07-21 09:05:27.567  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-07-21 09:05:27.700  INFO 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-21 09:05:27.702  INFO 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-07-21 09:05:27.737  INFO 6 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2020-07-21 09:05:28.067  INFO 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-21 09:05:28.067  INFO 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5052 ms
+2020-07-21 09:05:28.791  INFO 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-21 09:05:29.254  INFO 6 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-21 09:05:29.579  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-21 09:05:29.591  INFO 6 --- [           main] c.d.dockerexample.DemoApplication        : Started DemoApplication in 8.408 seconds (JVM running for 10.952)
+****************************************************
+
+In the browther print : http://localhost:1234
+
+And we get : "Press here" and "Success"
+
+************************************************************
+*****************************************************
