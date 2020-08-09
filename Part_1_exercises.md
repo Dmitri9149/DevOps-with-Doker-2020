@@ -1115,6 +1115,7 @@ dmitri@dmitri-Lenovo-H50-00:~/projects/spring-example-project$ docker run -p 123
 2020-07-21 09:05:29.254  INFO 6 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
 2020-07-21 09:05:29.579  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2020-07-21 09:05:29.591  INFO 6 --- [           main] c.d.dockerexample.DemoApplication        : Started DemoApplication in 8.408 seconds (JVM running for 10.952)
+```
 ****************************************************
 
 In the browther print : http://localhost:1234
@@ -1123,3 +1124,17 @@ And we get : "Press here" and "Success"
 
 ************************************************************
 *****************************************************
+*************************************************************
+
+1.14
+
+Lets create a Dockerfile for a rails project: github page.
+
+Again we can take a look at the README for the project to see the installation instructions. Tips to get you started:
+
+Use Ruby image FROM ruby:_tag_ to easily get most of what you’ll need at the beginning. Pick the tag by using the README and dockerhub page.
+
+If you want you can make small edits to the program if you get stuck and google doesn’t help you configure the setup. If you did, explain the edits with your submission of the Dockerfile.
+
+You’ve completed the exercise when the application works in your browser.
+*****************************************************************************
