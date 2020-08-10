@@ -1138,3 +1138,468 @@ If you want you can make small edits to the program if you get stuck and google 
 
 You’ve completed the exercise when the application works in your browser.
 *****************************************************************************
+´´´
+dmitri@dmitri-Lenovo-H50-00:~/projects/rails-example-project$ docker build -t rails .
+Sending build context to Docker daemon  146.4kB
+Step 1/15 : FROM ruby:2.6.0
+ ---> ef8778f370d5
+Step 2/15 : WORKDIR /workdir
+ ---> Running in f2f12269dfae
+Removing intermediate container f2f12269dfae
+ ---> 13d5d00935e3
+Step 3/15 : RUN apt-get update && apt-get install -y curl
+ ---> Running in c3041f2156e9
+Ign:1 http://deb.debian.org/debian stretch InRelease
+Get:2 http://security.debian.org/debian-security stretch/updates InRelease [53.0 kB]
+Get:3 http://deb.debian.org/debian stretch-updates InRelease [93.6 kB]
+Get:4 http://deb.debian.org/debian stretch Release [118 kB]
+Get:5 http://deb.debian.org/debian stretch Release.gpg [2410 B]
+Get:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages [547 kB]
+Get:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages [2596 B]
+Get:8 http://deb.debian.org/debian stretch/main amd64 Packages [7080 kB]
+Fetched 7896 kB in 4s (1744 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libcurl3 libcurl4-openssl-dev
+Suggested packages:
+  libcurl4-doc libcurl3-dbg libidn11-dev libldap2-dev librtmp-dev
+  libssh2-1-dev libssl1.0-dev | libssl-dev
+The following packages will be upgraded:
+  curl libcurl3 libcurl4-openssl-dev
+3 upgraded, 0 newly installed, 0 to remove and 111 not upgraded.
+Need to get 894 kB of archives.
+After this operation, 5120 B of additional disk space will be used.
+Get:1 http://security.debian.org/debian-security stretch/updates/main amd64 libcurl4-openssl-dev amd64 7.52.1-5+deb9u11 [374 kB]
+Get:2 http://security.debian.org/debian-security stretch/updates/main amd64 curl amd64 7.52.1-5+deb9u11 [227 kB]
+Get:3 http://security.debian.org/debian-security stretch/updates/main amd64 libcurl3 amd64 7.52.1-5+deb9u11 [292 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 894 kB in 0s (4011 kB/s)
+(Reading database ... 29688 files and directories currently installed.)
+Preparing to unpack .../libcurl4-openssl-dev_7.52.1-5+deb9u11_amd64.deb ...
+Unpacking libcurl4-openssl-dev:amd64 (7.52.1-5+deb9u11) over (7.52.1-5+deb9u8) ...
+Preparing to unpack .../curl_7.52.1-5+deb9u11_amd64.deb ...
+Unpacking curl (7.52.1-5+deb9u11) over (7.52.1-5+deb9u8) ...
+Preparing to unpack .../libcurl3_7.52.1-5+deb9u11_amd64.deb ...
+Unpacking libcurl3:amd64 (7.52.1-5+deb9u11) over (7.52.1-5+deb9u8) ...
+Setting up libcurl3:amd64 (7.52.1-5+deb9u11) ...
+Processing triggers for libc-bin (2.24-11+deb9u3) ...
+Setting up libcurl4-openssl-dev:amd64 (7.52.1-5+deb9u11) ...
+Setting up curl (7.52.1-5+deb9u11) ...
+Removing intermediate container c3041f2156e9
+ ---> 8178133ae4ee
+Step 4/15 : RUN apt-get update && apt-get install -y apt-utils
+ ---> Running in c0e2b604c588
+Ign:1 http://deb.debian.org/debian stretch InRelease
+Hit:2 http://security.debian.org/debian-security stretch/updates InRelease
+Hit:3 http://deb.debian.org/debian stretch-updates InRelease
+Hit:4 http://deb.debian.org/debian stretch Release
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  apt libapt-inst2.0
+Suggested packages:
+  apt-doc aptitude | synaptic | wajig dpkg-dev powermgmt-base python-apt
+The following NEW packages will be installed:
+  apt-utils libapt-inst2.0
+The following packages will be upgraded:
+  apt
+1 upgraded, 2 newly installed, 0 to remove and 110 not upgraded.
+Need to get 1833 kB of archives.
+After this operation, 1603 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian stretch/main amd64 apt amd64 1.4.10 [1232 kB]
+Get:2 http://deb.debian.org/debian stretch/main amd64 libapt-inst2.0 amd64 1.4.10 [191 kB]
+Get:3 http://deb.debian.org/debian stretch/main amd64 apt-utils amd64 1.4.10 [410 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 1833 kB in 0s (4915 kB/s)
+(Reading database ... 29688 files and directories currently installed.)
+Preparing to unpack .../archives/apt_1.4.10_amd64.deb ...
+Unpacking apt (1.4.10) over (1.4.9) ...
+Setting up apt (1.4.10) ...
+Selecting previously unselected package libapt-inst2.0:amd64.
+(Reading database ... 29688 files and directories currently installed.)
+Preparing to unpack .../libapt-inst2.0_1.4.10_amd64.deb ...
+Unpacking libapt-inst2.0:amd64 (1.4.10) ...
+Selecting previously unselected package apt-utils.
+Preparing to unpack .../apt-utils_1.4.10_amd64.deb ...
+Unpacking apt-utils (1.4.10) ...
+Setting up libapt-inst2.0:amd64 (1.4.10) ...
+Setting up apt-utils (1.4.10) ...
+Processing triggers for libc-bin (2.24-11+deb9u3) ...
+Removing intermediate container c0e2b604c588
+ ---> 794356d5e6f8
+Step 5/15 : RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+ ---> Running in 34dc5c5b8d79
+
+## Installing the NodeSource Node.js 10.x repo...
+
+
+## Populating apt-get cache...
+
++ apt-get update
+Hit:1 http://security.debian.org/debian-security stretch/updates InRelease
+Ign:2 http://deb.debian.org/debian stretch InRelease
+Hit:3 http://deb.debian.org/debian stretch-updates InRelease
+Hit:4 http://deb.debian.org/debian stretch Release
+Reading package lists...
+
+## Installing packages required for setup: apt-transport-https lsb-release...
+
++ apt-get install -y apt-transport-https lsb-release > /dev/null 2>&1
+
+## Confirming "stretch" is supported...
+
++ curl -sLf -o /dev/null 'https://deb.nodesource.com/node_10.x/dists/stretch/Release'
+
+## Adding the NodeSource signing key to your keyring...
+
++ curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+Warning: apt-key output should not be parsed (stdout is not a terminal)
+OK
+
+## Creating apt sources list file for the NodeSource Node.js 10.x repo...
+
++ echo 'deb https://deb.nodesource.com/node_10.x stretch main' > /etc/apt/sources.list.d/nodesource.list
++ echo 'deb-src https://deb.nodesource.com/node_10.x stretch main' >> /etc/apt/sources.list.d/nodesource.list
+
+## Running `apt-get update` for you...
+
++ apt-get update
+Hit:1 http://security.debian.org/debian-security stretch/updates InRelease
+Ign:2 http://deb.debian.org/debian stretch InRelease
+Hit:3 http://deb.debian.org/debian stretch-updates InRelease
+Hit:4 http://deb.debian.org/debian stretch Release
+Get:5 https://deb.nodesource.com/node_10.x stretch InRelease [4585 B]
+Get:7 https://deb.nodesource.com/node_10.x stretch/main amd64 Packages [766 B]
+Fetched 5351 B in 2s (2397 B/s)
+Reading package lists...
+
+## Run `sudo apt-get install -y nodejs` to install Node.js 10.x and npm
+## You may also need development tools to build native addons:
+     sudo apt-get install gcc g++ make
+## To install the Yarn package manager, run:
+     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+     sudo apt-get update && sudo apt-get install yarn
+
+
+Removing intermediate container 34dc5c5b8d79
+ ---> f749e139aa49
+Step 6/15 : RUN apt install -y nodejs
+ ---> Running in 354d7c38135f
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  nodejs
+0 upgraded, 1 newly installed, 0 to remove and 110 not upgraded.
+Need to get 16.2 MB of archives.
+After this operation, 81.3 MB of additional disk space will be used.
+Get:1 https://deb.nodesource.com/node_10.x stretch/main amd64 nodejs amd64 10.22.0-1nodesource1 [16.2 MB]
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Fetched 16.2 MB in 2s (5446 kB/s)
+Selecting previously unselected package nodejs.
+(Reading database ... 29843 files and directories currently installed.)
+Preparing to unpack .../nodejs_10.22.0-1nodesource1_amd64.deb ...
+Unpacking nodejs (10.22.0-1nodesource1) ...
+Setting up nodejs (10.22.0-1nodesource1) ...
+Removing intermediate container 354d7c38135f
+ ---> 91a902edaa75
+Step 7/15 : COPY package.json /workdir
+ ---> 65c40fc1e8ef
+Step 8/15 : RUN npm install
+ ---> Running in d3fb248f7b20
+npm notice created a lockfile as package-lock.json. You should commit this file.
+up to date in 1.116s
+found 0 vulnerabilities
+
+Removing intermediate container d3fb248f7b20
+ ---> e20872a1c859
+Step 9/15 : COPY . /workdir
+ ---> 38ffa38469a3
+Step 10/15 : COPY Gemfile Gemfile.lock /workdir/
+ ---> 19ef355736b2
+Step 11/15 : RUN gem install bundler
+ ---> Running in 5dbac4448bce
+Successfully installed bundler-2.1.4
+1 gem installed
+Removing intermediate container 5dbac4448bce
+ ---> 7336684db51a
+Step 12/15 : RUN bundle install
+ ---> Running in a9aeb8d47eeb
+The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+Fetching gem metadata from https://rubygems.org/..............
+Fetching rake 12.3.2
+Installing rake 12.3.2
+Fetching concurrent-ruby 1.1.5
+Installing concurrent-ruby 1.1.5
+Fetching i18n 1.6.0
+Installing i18n 1.6.0
+Fetching minitest 5.11.3
+Installing minitest 5.11.3
+Fetching thread_safe 0.3.6
+Installing thread_safe 0.3.6
+Fetching tzinfo 1.2.5
+Installing tzinfo 1.2.5
+Fetching activesupport 5.2.2.1
+Installing activesupport 5.2.2.1
+Fetching builder 3.2.3
+Installing builder 3.2.3
+Fetching erubi 1.8.0
+Installing erubi 1.8.0
+Fetching mini_portile2 2.4.0
+Installing mini_portile2 2.4.0
+Fetching nokogiri 1.10.1
+Installing nokogiri 1.10.1 with native extensions
+Fetching rails-dom-testing 2.0.3
+Installing rails-dom-testing 2.0.3
+Fetching crass 1.0.4
+Installing crass 1.0.4
+Fetching loofah 2.2.3
+Installing loofah 2.2.3
+Fetching rails-html-sanitizer 1.0.4
+Installing rails-html-sanitizer 1.0.4
+Fetching actionview 5.2.2.1
+Installing actionview 5.2.2.1
+Fetching rack 2.0.6
+Installing rack 2.0.6
+Fetching rack-test 1.1.0
+Installing rack-test 1.1.0
+Fetching actionpack 5.2.2.1
+Installing actionpack 5.2.2.1
+Fetching nio4r 2.3.1
+Installing nio4r 2.3.1 with native extensions
+Fetching websocket-extensions 0.1.3
+Installing websocket-extensions 0.1.3
+Fetching websocket-driver 0.7.0
+Installing websocket-driver 0.7.0 with native extensions
+Fetching actioncable 5.2.2.1
+Installing actioncable 5.2.2.1
+Fetching globalid 0.4.2
+Installing globalid 0.4.2
+Fetching activejob 5.2.2.1
+Installing activejob 5.2.2.1
+Fetching mini_mime 1.0.1
+Installing mini_mime 1.0.1
+Fetching mail 2.7.1
+Installing mail 2.7.1
+Fetching actionmailer 5.2.2.1
+Installing actionmailer 5.2.2.1
+Fetching activemodel 5.2.2.1
+Installing activemodel 5.2.2.1
+Fetching arel 9.0.0
+Installing arel 9.0.0
+Fetching activerecord 5.2.2.1
+Installing activerecord 5.2.2.1
+Fetching mimemagic 0.3.3
+Installing mimemagic 0.3.3
+Fetching marcel 0.3.3
+Installing marcel 0.3.3
+Fetching activestorage 5.2.2.1
+Installing activestorage 5.2.2.1
+Fetching public_suffix 3.0.3
+Installing public_suffix 3.0.3
+Fetching addressable 2.6.0
+Installing addressable 2.6.0
+Fetching io-like 0.3.0
+Installing io-like 0.3.0
+Fetching archive-zip 0.12.0
+Installing archive-zip 0.12.0
+Fetching bindex 0.5.0
+Installing bindex 0.5.0 with native extensions
+Fetching msgpack 1.2.9
+Installing msgpack 1.2.9 with native extensions
+Fetching bootsnap 1.4.1
+Installing bootsnap 1.4.1 with native extensions
+Using bundler 1.17.2
+Fetching byebug 11.0.0
+Installing byebug 11.0.0 with native extensions
+Fetching regexp_parser 1.3.0
+Installing regexp_parser 1.3.0
+Fetching xpath 3.2.0
+Installing xpath 3.2.0
+Fetching capybara 3.14.0
+Installing capybara 3.14.0
+Fetching ffi 1.10.0
+Installing ffi 1.10.0 with native extensions
+Fetching childprocess 0.9.0
+Installing childprocess 0.9.0
+Fetching chromedriver-helper 2.1.0
+Installing chromedriver-helper 2.1.0
+Fetching coffee-script-source 1.12.2
+Installing coffee-script-source 1.12.2
+Fetching execjs 2.7.0
+Installing execjs 2.7.0
+Fetching coffee-script 2.4.1
+Installing coffee-script 2.4.1
+Fetching method_source 0.9.2
+Installing method_source 0.9.2
+Fetching thor 0.20.3
+Installing thor 0.20.3
+Fetching railties 5.2.2.1
+Installing railties 5.2.2.1
+Fetching coffee-rails 4.2.2
+Installing coffee-rails 4.2.2
+Fetching multi_json 1.13.1
+Installing multi_json 1.13.1
+Fetching jbuilder 2.8.0
+Installing jbuilder 2.8.0
+Fetching rb-fsevent 0.10.3
+Installing rb-fsevent 0.10.3
+Fetching rb-inotify 0.10.0
+Installing rb-inotify 0.10.0
+Fetching ruby_dep 1.5.0
+Installing ruby_dep 1.5.0
+Fetching listen 3.1.5
+Installing listen 3.1.5
+Fetching puma 3.12.0
+Installing puma 3.12.0 with native extensions
+Fetching sprockets 3.7.2
+Installing sprockets 3.7.2
+Fetching sprockets-rails 3.2.1
+Installing sprockets-rails 3.2.1
+Fetching rails 5.2.2.1
+Installing rails 5.2.2.1
+Fetching rubyzip 1.2.2
+Installing rubyzip 1.2.2
+Fetching sass-listen 4.0.0
+Installing sass-listen 4.0.0
+Fetching sass 3.7.3
+Installing sass 3.7.3
+Fetching tilt 2.0.9
+Installing tilt 2.0.9
+Fetching sass-rails 5.0.7
+Installing sass-rails 5.0.7
+Fetching selenium-webdriver 3.141.0
+Installing selenium-webdriver 3.141.0
+Fetching spring 2.0.2
+Installing spring 2.0.2
+Fetching spring-watcher-listen 2.0.1
+Installing spring-watcher-listen 2.0.1
+Fetching sqlite3 1.3.13
+Installing sqlite3 1.3.13 with native extensions
+Fetching turbolinks-source 5.2.0
+Installing turbolinks-source 5.2.0
+Fetching turbolinks 5.2.0
+Installing turbolinks 5.2.0
+Fetching uglifier 4.1.20
+Installing uglifier 4.1.20
+Fetching web-console 3.7.0
+Installing web-console 3.7.0
+Bundle complete! 18 Gemfile dependencies, 79 gems now installed.
+Bundled gems are installed into `/usr/local/bundle`
+Post-install message from i18n:
+
+HEADS UP! i18n 1.1 changed fallbacks to exclude default locale.
+But that may break your application.
+
+Please check your Rails app for 'config.i18n.fallbacks = true'.
+If you're using I18n (>= 1.1.0) and Rails (< 5.2.2), this should be
+'config.i18n.fallbacks = [I18n.default_locale]'.
+If not, fallbacks will be broken in your app by I18n 1.1.x.
+
+For more info see:
+https://github.com/svenfuchs/i18n/releases/tag/v1.1.0
+
+Post-install message from sass:
+
+Ruby Sass is deprecated and will be unmaintained as of 26 March 2019.
+
+* If you use Sass as a command-line tool, we recommend using Dart Sass, the new
+  primary implementation: https://sass-lang.com/install
+
+* If you use Sass as a plug-in for a Ruby web framework, we recommend using the
+  sassc gem: https://github.com/sass/sassc-ruby#readme
+
+* For more details, please refer to the Sass blog:
+  http://sass.logdown.com/posts/7081811
+
+Removing intermediate container a9aeb8d47eeb
+ ---> 0d02493776f2
+Step 13/15 : RUN rails db:migrate
+ ---> Running in 1bfc1377211d
+== 20190314120316 CreatePresses: migrating ====================================
+-- create_table(:presses)
+   -> 0.0020s
+== 20190314120316 CreatePresses: migrated (0.0054s) ===========================
+
+Removing intermediate container 1bfc1377211d
+ ---> cd65b6737c57
+Step 14/15 : EXPOSE 3000
+ ---> Running in 2022c61fa543
+Removing intermediate container 2022c61fa543
+ ---> d310118faf3f
+Step 15/15 : CMD rails s
+ ---> Running in 5c9303d584c0
+Removing intermediate container 5c9303d584c0
+ ---> 45c1823b25e9
+Successfully built 45c1823b25e9
+Successfully tagged rails:latest
+dmitri@dmitri-Lenovo-H50-00:~/projects/rails-example-project$ 
+dmitri@dmitri-Lenovo-H50-00:~/projects/rails-example-project$ docker run -p 1234:3000 rails
+=> Booting Puma
+=> Rails 5.2.2.1 application starting in development 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.12.0 (ruby 2.6.0-p0), codename: Llamas in Pajamas
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://0.0.0.0:3000
+Use Ctrl-C to stop
+Started GET "/" for 172.17.0.1 at 2020-08-10 11:56:10 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+   (0.4ms)  SELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC
+  ↳ /usr/local/bundle/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PressesController#new as HTML
+   (0.4ms)  SELECT COUNT(*) FROM "presses"
+  ↳ app/controllers/presses_controller.rb:18
+  Rendering presses/new.html.erb within layouts/application
+  Rendered presses/_form.html.erb (3.7ms)
+  Rendered presses/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 1518ms (Views: 1479.1ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/presses" for 172.17.0.1 at 2020-08-10 11:56:28 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZLKnFjiZHcednMTNpUA/0Zn+Yn82B/KsvxnuSusuPrV11jaXtJVYUfKwzeHM4OOCR4FNHKTQj0f3MSYA8oov2w==", "commit"=>"Press"}
+   (0.2ms)  begin transaction
+  ↳ app/controllers/presses_controller.rb:31
+  Press Create (1.2ms)  INSERT INTO "presses" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2020-08-10 11:56:28.072623"], ["updated_at", "2020-08-10 11:56:28.072623"]]
+  ↳ app/controllers/presses_controller.rb:31
+   (50.9ms)  commit transaction
+  ↳ app/controllers/presses_controller.rb:31
+Redirected to http://localhost:1234/presses/new
+Completed 302 Found in 66ms (ActiveRecord: 52.3ms)
+
+
+Started GET "/presses/new" for 172.17.0.1 at 2020-08-10 11:56:28 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PressesController#new as HTML
+   (0.4ms)  SELECT COUNT(*) FROM "presses"
+  ↳ app/controllers/presses_controller.rb:18
+  Rendering presses/new.html.erb within layouts/application
+  Rendered presses/_form.html.erb (3.2ms)
+  Rendered presses/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 58ms (Views: 53.7ms | ActiveRecord: 0.4ms
+´´´
+**************************************************************
+
+In browser : localhost:1234 -> New press -> Press (press Press)
+
+*********************************************************************
+****************************************************************
+
