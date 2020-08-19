@@ -15,7 +15,8 @@ EXPOSE 8080
 RUN sudo apt-get update && sudo apt-get install -y vim
 RUN sudo mkdir form_server
 COPY form_server.links ./form_server
-
+RUN sudo mkdir form_client
+COPY form_client.links ./form_client
  
 
 
