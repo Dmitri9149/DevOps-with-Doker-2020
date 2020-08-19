@@ -15,9 +15,11 @@ RUN eval `opam config env`
 RUN opam update
 RUN opam install -y postgresql links links-postgresql
 RUN eval `opam config env`
-RUN mkdir hello_links
+RUN sudo mkdir hello_links
 COPY hello_links.links ./hello_links
-RUN ./hello_links/hello_links.links
+# RUN linx ./hello_links/hello_links.links
+EXPOSE 8080
+# CMD ["linx"] 
 
 
 
