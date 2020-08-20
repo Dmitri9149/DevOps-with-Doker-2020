@@ -19,6 +19,7 @@ RUN sudo mkdir form_client
 COPY form_client.links ./form_client
 RUN sudo mkdir todo
 COPY todo.links ./todo
+EXPOSE 5432
 
 
 
