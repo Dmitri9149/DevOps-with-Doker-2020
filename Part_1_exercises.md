@@ -1602,4 +1602,43 @@ In browser : localhost:1234 -> New press -> Press (press Press)
 
 *********************************************************************
 ****************************************************************
+******************************************************************
+**********************************************************************
+
+1.15
+
+Create Dockerfile for an application or any other dockerised project in any of your own repositories and publish it to Docker Hub. This can be any project except clones / forks of backend-example or frontend-example.
+
+For this exercise to be complete you have to provide the link to the project in docker hub, make sure you at least have a basic description and instructions for how to run the application in a README that’s available through your submission.
+*********************************************************************
+
+The project is here: https://github.com/Dmitri9149/Simple-web-app-with-Rust-and-Rocket
+
+Pull image : docker pull dmitri9149/identity_functions
+
+******************************************************
+************************************************************
+***************************************************************
+***************************************************************
+
+
+1.16
+
+Pushing to heroku happens in a similar way. A project has already been prepared at devopsdockeruh/heroku-example so lets pull that first. Note that the image of the project is quite large.
+
+Go to https://www.heroku.com/ and create a new app there and install heroku CLI. You can find additional instructions from Deploy tab under Container Registry. Tag the pulled image as registry.heroku.com/_app_/_process-type_, process-type can be web for this exercise. The app should be your project name in heroku.
+
+Then push the image to heroku with docker push registry.heroku.com/_app_/web and release it using the heroku CLI: heroku container:release web (you might need to login first: heroku container:login)
+
+For this exercise return the url in which the released application is.
+
+You could also use the heroku CLI to build and push, but since we didn’t want to build anything this time it was easier to just tag the image.
+***********************************************************************
+
+The app is here : https://heroku--app--1.herokuapp.com/presses/new
+
+********************************************************************
+***********************************************************************
+*************************************************************************
+**************************************************************************
 
