@@ -117,14 +117,29 @@ Submit the secret message and command(s) given as your answer.
 
 ***********************************************************
 ``` console
-dmitri@dmitri-Lenovo-H50-00:~/projects$ docker run -it devopsdockeruh/pull_exercise
-Give me the password: basics
-You found the correct password. Secret message is:
-"This is the secret message"
 
-dmitri@dmitri-Lenovo-H50-00:~/projects$ 
+dmitri@dmitri-Lenovo-H50-00:~/projects$ docker run -d --rm -it  --name log_creator devopsdockeruh/exec_bash_exercise
+92c9637a0e607d8b14a2d811283514d51f0313380f36d74c7e1f787073f05297
+dmitri@dmitri-Lenovo-H50-00:~/projects$ docker exec -it log_creator bash
+root@92c9637a0e60:/usr/app# tail -f ./logs.txt
+Secret message is:
+"Docker is easy"
+Mon, 14 Sep 2020 11:39:17 GMT
+Mon, 14 Sep 2020 11:39:20 GMT
+Mon, 14 Sep 2020 11:39:23 GMT
+Mon, 14 Sep 2020 11:39:26 GMT
+Secret message is:
+"Docker is easy"
+Mon, 14 Sep 2020 11:39:32 GMT
+Mon, 14 Sep 2020 11:39:35 GMT
+Mon, 14 Sep 2020 11:39:38 GMT
+Mon, 14 Sep 2020 11:39:41 GMT
+^C
+root@92c9637a0e60:/usr/app# 
 ```
 ******************************************************************************
+
+Secret message is "Docker is easy"
 ******************************************************************************
 
 *********************************************************************************
