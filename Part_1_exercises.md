@@ -1153,7 +1153,7 @@ If you want you can make small edits to the program if you get stuck and google 
 
 You’ve completed the exercise when the application works in your browser.
 *****************************************************************************
-´´´
+```
 dmitri@dmitri-Lenovo-H50-00:~/projects/rails-example-project$ docker build -t rails .
 Sending build context to Docker daemon  146.4kB
 Step 1/15 : FROM ruby:2.6.0
@@ -1610,7 +1610,7 @@ Processing by PressesController#new as HTML
   Rendered presses/_form.html.erb (3.2ms)
   Rendered presses/new.html.erb within layouts/application (6.7ms)
 Completed 200 OK in 58ms (Views: 53.7ms | ActiveRecord: 0.4ms
-´´´
+```
 **************************************************************
 
 In browser : localhost:1234 -> New press -> Press (press Press)
